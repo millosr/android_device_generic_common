@@ -109,6 +109,21 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
+# nAOSP changes
+
+# Superuser
+PRODUCT_PACKAGES += \
+    su
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.root_access=3
+
+# Google Assistant
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.opa.eligible_device=true
+
+# nAOSP changes END
+
 # Get the firmwares
 $(call inherit-product,device/generic/firmware/firmware.mk)
 
