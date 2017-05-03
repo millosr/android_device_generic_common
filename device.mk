@@ -14,6 +14,34 @@
 # limitations under the License.
 #
 
+#OpenGAPPS
+GAPPS_VARIANT := pico
+PRODUCT_PACKAGES += GoogleContacts \
+    Hotword \
+    Search \
+    Speech \
+    Talkback \
+    WebViewGoogle \
+    YouTube \
+    GCS \
+    DMAgent \
+    PixelIcons \
+    PixelLauncher \
+    Wallpapers \
+    CalendarGooglePrebuilt \
+    PrebuiltExchange3Google \
+    PrebuiltGmail \
+    GoogleTTS \
+    Velvet
+
+#GAPPS_FORCE_PACKAGE_OVERRIDES := true
+GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+GAPPS_FORCE_BROWSER_OVERRIDES := true
+
+GAPPS_EXCLUDED_PACKAGE := GooglePackageInstaller
+
+GAPPS_BYPASS_PACKAGE_OVERRIDES := GoogleHome PixelLauncher
+
 PRODUCT_DIR := $(dir $(lastword $(filter-out device/common/%,$(filter device/%,$(ALL_PRODUCTS)))))
 
 PRODUCT_PROPERTY_OVERRIDES := \
@@ -107,3 +135,7 @@ $(call inherit-product-if-exists,vendor/google/products/gms.mk)
 
 # Get native bridge settings
 $(call inherit-product-if-exists,$(LOCAL_PATH)/nativebridge/nativebridge.mk)
+
+#OpenGAPPS
+$(call inherit-product, vendor/google/build/opengapps-packages.mk)
+

@@ -22,6 +22,8 @@ WITH_DEXPREOPT := true
 WITH_DEXPREOPT_PIC := true
 endif
 
+DONT_DEXPREOPT_PREBUILTS := true
+
 # the following variables could be overridden
 TARGET_PRELINK_MODULE := false
 TARGET_NO_KERNEL ?= false
