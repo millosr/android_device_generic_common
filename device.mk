@@ -15,30 +15,19 @@
 #
 
 #OpenGAPPS
-GAPPS_VARIANT := pico
-PRODUCT_PACKAGES += GoogleContacts \
-    Hotword \
-    Search \
-    Speech \
-    Talkback \
-    WebViewGoogle \
+GAPPS_VARIANT := micro
+PRODUCT_PACKAGES += WebViewGoogle \
     YouTube \
-    GCS \
-    DMAgent \
     PixelIcons \
     PixelLauncher \
-    Wallpapers \
-    CalendarGooglePrebuilt \
-    PrebuiltExchange3Google \
-    PrebuiltGmail \
-    GoogleTTS \
-    Velvet
+    Wallpapers
 
-#GAPPS_FORCE_PACKAGE_OVERRIDES := true
 GAPPS_FORCE_WEBVIEW_OVERRIDES := true
 GAPPS_FORCE_BROWSER_OVERRIDES := true
 
-GAPPS_EXCLUDED_PACKAGE := GooglePackageInstaller
+GAPPS_EXCLUDED_PACKAGES := GooglePackageInstaller \
+    FaceLock \
+    SetupWizard
 
 GAPPS_BYPASS_PACKAGE_OVERRIDES := GoogleHome PixelLauncher
 
